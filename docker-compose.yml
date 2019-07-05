@@ -1,20 +1,19 @@
-version: '2'
-services:
-  kali:
-    image: kalilinux/kali-linux-docker
-    volumes:
-      - ./data/kali:/app
-    command: /app/install.sh
-  host1:
-    build: ./eg_sshd
-    image: ubuntu
-    volumes:
-      - ./data/host1:/root
-    expose:
-      - 22
-  host2:
-    image: httpd:2.4
-    volumes:
-      - ./data/host2:/usr/local/apache2/htdocs/
-    expose:
-        - 80
+kali:
+  image: kalilinux/kali-linux-docker
+  volumes:
+    - ./data/kali:/app
+  command: /app/install.sh
+host1:
+  build: ./eg_sshd
+  volumes:
+    - ./data/host1:/root
+  expose:
+    - 22
+host2:
+  image: httpd:2.4
+  volumes:
+    - ./data/host2:/usr/local/apache2/htdocs/
+  ports:
+      - "80:80"
+  expose:
+      - 80
