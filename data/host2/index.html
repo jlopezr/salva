@@ -70,19 +70,19 @@ span.psw {
 
 <h2>Login Form</h2>
 
-<form action="/action_page.php">
+<form>
   <div class="imgcontainer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_UPC.svg/1200px-Logo_UPC.svg.png" alt="UPC" class="avatar" width="100px">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_UPC.svg/1200px-Logo_UPC.svg.png" alt="UPC" width="100px">
   </div>
 
   <div class="container">
-    <label for="uname"><b>Usuri</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="uname"><b>Usuari</b></label>
+    <input type="text" placeholder="Enter Username" id="uname" required>
 
     <label for="psw"><b>Clau</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" id="psw" required>
         
- 	<button onclick="myFunction()">Accedir-hi</button>     
+ 	<button type="button" onclick="myFunction();">Accedir-hi</button>     
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
@@ -90,17 +90,22 @@ span.psw {
 
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
-    <!----span class="psw">Forgot <a href="#">password?</a></span---->
   </div>
 </form>
 
-</body>
 <script>
 function myFunction() {
-if (uname.value == "UP4" && psw.value == "destroy"){
-   window.location = "/content.html";  
+  var uname = document.getElementById("uname");
+  var psw = document.getElementById("psw");
+  console.dir(psw);
+  if (uname.value == "UP4" && psw.value == "destroy"){
+     window.location = "/content.html";  
+  } else {
+     alert("AUTENTICACIO INCORRECTA");
+  }
 }
 </script>
 
+</body>
 </html>
 
