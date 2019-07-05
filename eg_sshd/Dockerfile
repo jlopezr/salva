@@ -16,7 +16,7 @@ CMD ["/usr/sbin/sshd", "-D"FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir -p /var/run/sshd
-RUN echo 'root:THEPASSWORDYOUCREATED' | chpasswd
+RUN echo 'root:Yuf3ra' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # SSH login fix. Otherwise user is kicked off after login

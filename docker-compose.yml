@@ -8,7 +8,9 @@ host1:
   volumes:
     - ./data/host1:/root
   expose:
-    - 22
+    - 2222
+  ports:
+      - "2222:22"
 host2:
   image: httpd:2.4
   volumes:

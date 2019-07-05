@@ -21,3 +21,9 @@ ls
 mkdir HOLA
 ls
 exit
+ls
+cd mails/
+ls
+cd 06.junio/
+ls
+exit
